@@ -23,9 +23,13 @@ class LoginController extends Controller
         if(Auth::attempt($credentials)){
             $request->session()->regenerate();
 
-            return redirect()->intended('/');
+            return redirect()->intended('/dashboard');
 
-        } 
+        } else if (Auth::guard('peserta')->attempt($credentials)){
+            $request->session()->regenerate();
+
+            return redirect()->intended('/')->with('success','Berhasil login!');
+        }
 
         return back()->with('loginError','Login Failed');
 

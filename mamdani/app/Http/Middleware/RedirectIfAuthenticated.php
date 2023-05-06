@@ -21,7 +21,12 @@ class RedirectIfAuthenticated
 
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
+
                 return redirect('/dashboard')->with('success','Anda Sudah Login!');
+
+            } else if (Auth::guard('peserta')->check()) {
+
+                return redirect('/')->with('success','Anda Sudah Login!');
             }
         }
 

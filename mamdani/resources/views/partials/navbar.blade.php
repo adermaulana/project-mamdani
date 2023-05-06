@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg bg-light">
+<nav class="navbar navbar-expand-lg bg-light fixed-top d-flex align-items-center">
   <div class="container">
-    <a class="navbar-brand " href="#">Navbar</a>
+    <a class="navbar-brand " href="#">SMKN 8 JENEPONTO</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -16,15 +16,35 @@
           <a class="nav-link" href="#">Kontak</a>
         </li>
       </ul>
-      @auth
+      @auth('peserta')
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Welcome Back, {{ auth('peserta')->user()->name }}
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/">Home</a></li>
+            <li><a class="dropdown-item" href="#">Hasil</a></li>
+            <li>
+            <form action="/logout" method="post">
+                @csrf
+                <button type="submit" class="dropdown-item">
+                  Logout
+                </button>
+              </form>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      @elseif(Auth::check())
       <ul class="navbar-nav">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Welcome Back, {{ auth()->user()->name }}
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="/">Home</a></li>
+            <li><a class="dropdown-item" href="/dashboard">Dashboard</a></li>
             <li>
             <form action="/logout" method="post">
                 @csrf

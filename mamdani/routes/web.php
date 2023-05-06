@@ -17,14 +17,21 @@ use App\Http\Controllers\RegisterController;
 
 Route::get('/', function () {
     return view('index',[
-        'title' => 'Rekomendasi Jurusan'
+        'title' => 'Rekomendasi Jurusan SMKN 8 Jeneponto'
     ]);
 });
+
+Route::get('/dashboard', function () {
+    return view('dashboard.index',[
+        'title' => 'Admin Rekomendasi Jurusan SMKN 8 Jeneponto'
+    ]);
+})->middleware('auth');
 
 //Login
 Route::get('/login', [LoginController::class,'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class,'authenticate']);
 Route::post('/logout', [LoginController::class,'logout']);
 
-
+//Registrasi
 Route::get('/register', [RegisterController::class,'index'])->middleware('guest');
+Route::post('/register', [RegisterController::class,'store']);
