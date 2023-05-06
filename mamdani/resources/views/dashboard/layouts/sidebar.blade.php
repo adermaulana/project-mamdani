@@ -91,7 +91,6 @@
         </ul>
       </li><!-- End Laporan Nav -->
 
-      @can('admin')
       <li class="nav-heading">Admin</li>
 
       <li class="nav-item">
@@ -231,7 +230,6 @@
           </li>
         </ul>
       </li><!-- End Icons Nav -->
-      @endcan
     </ul>
 
   </aside><!-- End Sidebar-->

@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-light fixed-top d-flex align-items-center">
   <div class="container">
-    <a class="navbar-brand " href="#">SMKN 8 JENEPONTO</a>
+    <a class="navbar-brand " href="/">SMKN 8 JENEPONTO</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -57,9 +57,15 @@
         </li>
       </ul>
       @else
-      <li class="nav-item navbar-nav  mb-2 mb-lg-0">
-          <a class="btn btn-primary active" aria-current="page" href="/login"><i class="bi bi-box-arrow-in-right"></i>Login</a>
-        </li>
+        @if(Request::is('login'))
+        <li class="nav-item navbar-nav  mb-2 mb-lg-0">
+            <a class="btn btn-primary active" aria-current="page" href="/register"><i class="bi bi-box-arrow-in-right"></i>Register</a>
+          </li>
+        @else
+        <li class="nav-item navbar-nav  mb-2 mb-lg-0">
+            <a class="btn btn-primary active" aria-current="page" href="/login"><i class="bi bi-box-arrow-in-right"></i>Login</a>
+          </li>
+        @endif
       @endauth
   </div>
 </nav>

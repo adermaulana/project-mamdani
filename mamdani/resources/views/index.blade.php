@@ -6,7 +6,7 @@
         <h1>
           <span class="hear"> Rekomendasi Penentuan
             Konsentrasi Jurusan </span> <br />
-          <span class="connecting">  SMKN 8 JENEPONTO
+          <span class="connecting">  SMKN 8 Jeneponto
             </span>
         </h1>
         <p>
@@ -34,5 +34,7 @@
         <img width="500" src="/img/ilustrasi.jpg">
       </div>
 </section>
+<br><br><br><br><br>
+<hr>
 @endsection
 
