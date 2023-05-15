@@ -11,29 +11,29 @@
       </li><!-- End Dashboard Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed {{ Request::is('dashboard/penjualan*') ? 'text-primary bg-light' : '' }}" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-bag"></i><span>Penjualan</span><i class="bi bi-chevron-down ms-auto"></i>
+        <a class="nav-link collapsed {{ Request::is('dashboard/instrumen*') ? 'text-primary bg-light' : '' }}" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-file-text"></i><span>Instrumen Pernyataan</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        @if(Request::is('dashboard/penjualan*'))
+        @if(Request::is('dashboard/instrumen*'))
         <ul id="charts-nav" class="nav-content ">
         @else
         <ul id="charts-nav" class="nav-content collapse ">
         @endif
           <li>
-            <a href="/dashboard/penjualan/create">
-            @if(Request::is('dashboard/penjualan/create'))
-              <i class="bi bi-circle"></i><span class="text-primary">Tambah Penjualan</span>
+            <a href="/dashboard/instrumen/create">
+            @if(Request::is('dashboard/instrumen/instrumen'))
+              <i class="bi bi-circle"></i><span class="text-primary">Tambah Pernyataan</span>
             @else
-              <i class="bi bi-circle"></i><span>Tambah Penjualan</span>
+              <i class="bi bi-circle"></i><span>Tambah Pernyataan</span>
             @endif
             </a>
           </li>
           <li>
-            <a href="/dashboard/penjualan">
-            @if(Request::is('dashboard/penjualan'))
-              <i class="bi bi-circle"></i><span class="text-primary">Lihat Penjualan</span>
+            <a href="/dashboard/instrumen">
+            @if(Request::is('dashboard/instrumen'))
+              <i class="bi bi-circle"></i><span class="text-primary">Lihat Pernyataan</span>
             @else
-              <i class="bi bi-circle"></i><span>Lihat Penjualan</span>
+              <i class="bi bi-circle"></i><span>Lihat Pernyataan</span>
             @endif
             </a>
           </li>
@@ -41,29 +41,20 @@
       </li><!-- End Charts Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed {{ Request::is('dashboard/pembelian*') ? 'text-primary bg-light' : ''  }}" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-wallet"></i><span>Pembelian</span><i class="bi bi-chevron-down ms-auto"></i>
+        <a class="nav-link collapsed {{ Request::is('dashboard/minat*') ? 'text-primary bg-light' : ''  }}" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-file-text"></i><span>Data Tes Minat</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        @if(Request::is('dashboard/pembelian*'))
+        @if(Request::is('dashboard/minat*'))
         <ul id="icons-nav" class="nav-content ">
         @else
         <ul id="icons-nav" class="nav-content collapse ">
         @endif
           <li>
-            <a href="/dashboard/pembelian/create">
-            @if(Request::is('dashboard/pembelian/create'))
-              <i class="bi bi-circle"></i><span class="text-primary">Tambah Pembelian</span>
+            <a href="/dashboard/minat">
+            @if(Request::is('dashboard/minat'))
+            <i class="bi bi-circle"></i><span class="text-primary">Lihat Tes Minat</span>
             @else
-              <i class="bi bi-circle"></i><span>Tambah Pembelian</span>
-            @endif
-            </a>
-          </li>
-          <li>
-            <a href="/dashboard/pembelian">
-            @if(Request::is('dashboard/pembelian'))
-            <i class="bi bi-circle"></i><span class="text-primary">Lihat Pembelian</span>
-            @else
-              <i class="bi bi-circle"></i><span>Lihat Pembelian</span>
+              <i class="bi bi-circle"></i><span>Lihat Tes Minat</span>
             @endif
             </a>
           </li>
@@ -71,70 +62,29 @@
       </li><!-- End Icons Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed {{ Request::is('dashboard/laporan*') ? 'text-primary bg-light' : '' }}" data-bs-target="#laporan-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-file-text"></i><span>Laporan</span><i class="bi bi-chevron-down ms-auto"></i>
+        <a class="nav-link collapsed {{ Request::is('dashboard/peserta*') ? 'text-primary bg-light' : '' }}" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-people"></i><span>Data Peserta</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        @if(Request::is('dashboard/laporan*'))
-        <ul id="laporan-nav" class="nav-content ">
-        @else
-        <ul id="laporan-nav" class="nav-content collapse ">
-        @endif
-          <li>
-            <a href="/dashboard/laporan">
-            @if(Request::is('dashboard/laporan'))
-              <i class="bi bi-circle"></i><span class="text-primary">Lihat Laporan</span>
-            @else
-              <i class="bi bi-circle"></i><span>Lihat Laporan</span>
-            @endif
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Laporan Nav -->
-
-      <li class="nav-heading">Admin</li>
-
-      <li class="nav-item">
-        <a class="nav-link collapsed {{ Request::is('dashboard/obat*') ? 'text-primary bg-light' : '' }}" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-capsule"></i><span>Obat</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        @if(Request::is('dashboard/obat*'))
+        @if(Request::is('dashboard/peserta*'))
         <ul id="components-nav" class="nav-content">
         @else
         <ul id="components-nav" class="nav-content collapse ">
         @endif
          <li>
-            <a href="/dashboard/obat/create">
-            @if(Request::is('dashboard/obat/create'))
-              <i class="bi bi-circle"></i><span class="text-primary">Tambah Obat</span>
+            <a href="/dashboard/peserta/create">
+            @if(Request::is('dashboard/peserta/create'))
+              <i class="bi bi-circle"></i><span class="text-primary">Tambah Peserta</span>
             @else
-              <i class="bi bi-circle"></i><span>Tambah Obat</span>
+              <i class="bi bi-circle"></i><span>Tambah Peserta</span>
             @endif
             </a>
           </li>
           <li>
-            <a href="/dashboard/obat">
-            @if(Request::is('dashboard/obat'))
-              <i class="bi bi-circle"></i><span class="text-primary">Lihat Obat</span>
+            <a href="/dashboard/peserta">
+            @if(Request::is('dashboard/peserta'))
+              <i class="bi bi-circle"></i><span class="text-primary">Lihat Peserta</span>
             @else
-              <i class="bi bi-circle"></i><span>Lihat Obat</span>
-            @endif
-            </a>
-          </li>
-          <li>
-            <a href="/dashboard/obat/kadaluwarsa">
-            @if(Request::is('dashboard/obat/kadaluwarsa'))
-              <i class="bi bi-circle"></i><span class="text-primary">Obat Kadaluwarsa</span>
-            @else
-              <i class="bi bi-circle"></i><span>Obat Kadaluwarsa</span>
-            @endif
-            </a>
-          </li>
-          <li>
-            <a href="/dashboard/obat/habis">
-            @if(Request::is('dashboard/obat/habis'))
-              <i class="bi bi-circle"></i><span class="text-primary">Obat Habis</span>
-            @else
-              <i class="bi bi-circle"></i><span>Obat Habis</span>
+              <i class="bi bi-circle"></i><span>Lihat Peserta</span>
             @endif
             </a>
           </li>
@@ -142,29 +92,29 @@
       </li><!-- End Components Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed {{ Request::is('dashboard/unit*') ? 'text-primary bg-light' : '' }}" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="">
-          <i class="bi bi-tags-fill"></i><span>Unit</span><i class="bi bi-chevron-down ms-auto"></i>
+        <a class="nav-link collapsed {{ Request::is('dashboard/jurusan*') ? 'text-primary bg-light' : '' }}" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="">
+          <i class="bi bi-file-text"></i><span>Data Jurusan</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        @if(Request::is('dashboard/unit*'))
+        @if(Request::is('dashboard/jurusan*'))
         <ul id="forms-nav" class="nav-content ">
         @else
         <ul id="forms-nav" class="nav-content collapse ">
         @endif
           <li>
-            <a href="/dashboard/unit/create">
-            @if(Request::is('dashboard/unit/create'))
-              <i class="bi bi-circle"></i><span class="text-primary">Tambah Unit</span>
+            <a href="/dashboard/jurusan/create">
+            @if(Request::is('dashboard/jurusan/create'))
+              <i class="bi bi-circle"></i><span class="text-primary">Tambah Jurusan</span>
             @else
-              <i class="bi bi-circle"></i><span>Tambah Unit</span>
+              <i class="bi bi-circle"></i><span>Tambah Jurusan</span>
             @endif
             </a>
           </li>
           <li>
-            <a href="/dashboard/unit">
-            @if(Request::is('dashboard/unit'))
-              <i class="bi bi-circle"></i><span class="text-primary">Lihat Unit</span>
+            <a href="/dashboard/jurusan">
+            @if(Request::is('dashboard/jurusan'))
+              <i class="bi bi-circle"></i><span class="text-primary">Lihat Jurusan</span>
             @else
-              <i class="bi bi-circle"></i><span>Lihat Unit</span>
+              <i class="bi bi-circle"></i><span>Lihat Jurusan</span>
             @endif
             </a>
           </li>
@@ -172,64 +122,36 @@
       </li><!-- End Forms Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed {{ Request::is('dashboard/pemasok*') ? 'text-primary bg-light' : '' }}" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="">
-          <i class="bi bi-building"></i><span>Pemasok</span><i class="bi bi-chevron-down ms-auto"></i>
+        <a class="nav-link collapsed {{ Request::is('dashboard/rapor*') ? 'text-primary bg-light' : '' }}" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-layout-text-window-reverse"></i><span>Data Nilai Rapor</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        @if(Request::is('dashboard/pemasok*'))
-        <ul id="tables-nav" class="nav-content ">
+        @if(Request::is('dashboard/rapor*'))
+        <ul id="tables-nav" class="nav-content " data-bs-parent="#sidebar-nav">
         @else
-        <ul id="tables-nav" class="nav-content collapse ">
+        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
         @endif
-          <li>
-            <a href="/dashboard/pemasok/create">
-            @if(Request::is('dashboard/pemasok/create'))
-              <i class="bi bi-circle"></i><span class="text-primary">Tambah Pemasok</span>
+        <li>
+            <a href="/dashboard/rapor/create">
+            @if(Request::is('dashboard/rapor/create'))
+              <i class="bi bi-circle"></i><span class="text-primary">Tambah Nilai Rapor</span>
             @else
-              <i class="bi bi-circle"></i><span>Tambah Pemasok</span>
+              <i class="bi bi-circle"></i><span>Tambah Nilai Rapor</span>
             @endif
             </a>
           </li>
           <li>
-            <a href="/dashboard/pemasok">
-            @if(Request::is('dashboard/pemasok'))
-              <i class="bi bi-circle"></i><span class="text-primary">Lihat Pemasok</span>
+            <a href="/dashboard/rapor">
+            @if(Request::is('dashboard/rapor'))
+              <i class="bi bi-circle"></i><span class="text-primary">Lihat Nilai Rapor</span>
             @else
-            <i class="bi bi-circle"></i><span>Lihat Pemasok</span>
+              <i class="bi bi-circle"></i><span>Lihat Nilai Rapor</span>
             @endif
             </a>
           </li>
         </ul>
       </li><!-- End Tables Nav -->
 
-      <li class="nav-item">
-        <a class="nav-link collapsed {{ Request::is('dashboard/user*') ? 'text-primary bg-light' : '' }}" data-bs-target="#kasir-nav" data-bs-toggle="collapse" href="">
-          <i class="bi bi-people"></i><span>Data Pengelola</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        @if(Request::is('dashboard/user*'))
-        <ul id="kasir-nav" class="nav-content ">
-        @else
-        <ul id="kasir-nav" class="nav-content collapse ">
-        @endif
-          <li>
-            <a href="/dashboard/user/create">
-            @if(Request::is('dashboard/user/create'))
-              <i class="bi bi-circle"></i><span class="text-primary">Tambah User</span>
-            @else
-              <i class="bi bi-circle"></i><span>Tambah User</span>
-            @endif
-            </a>
-          </li>
-          <li>
-            <a href="/dashboard/user">
-            @if(Request::is('dashboard/user'))
-              <i class="bi bi-circle"></i><span class="text-primary">Lihat User</span>
-            @else
-              <i class="bi bi-circle"></i><span>Lihat User</span>
-            @endif
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Icons Nav -->
+
     </ul>
 
   </aside><!-- End Sidebar-->

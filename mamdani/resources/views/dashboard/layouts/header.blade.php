@@ -15,7 +15,7 @@
     <div class="d-flex align-items-center justify-content-between">
       <div class="logo d-flex align-items-center">
         <img src="/assets/img/medical-remove.png" alt="">
-        <span class="d-none d-lg-block">Pharmacy</span>
+        <span class="d-none d-lg-block">Admin Dashboard</span>
       </div> 
     </div><!-- End Logo -->
     @endauth
