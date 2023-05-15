@@ -82,8 +82,12 @@ class PernyataanController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Pernyataan $pernyataan)
+    public function destroy($id)
     {
-        //
+        $pernyataan = Pernyataan::FindOrFail($id);
+        Pernyataan::destroy($pernyataan->id);
+
+        return redirect()->route('instrumen.index')
+        ->with('success','Data Berhasil Dihapus');
     }
 }

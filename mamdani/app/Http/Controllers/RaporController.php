@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Rapor;
-use App\Http\Requests\StoreRaporRequest;
-use App\Http\Requests\UpdateRaporRequest;
 
 class RaporController extends Controller
 {
@@ -13,7 +11,10 @@ class RaporController extends Controller
      */
     public function index()
     {
-        //
+        return view('dashboard.rapor.index',[
+            'title' => 'Nilai Rapor',
+            'rapor' => Rapor::all()
+        ]);
     }
 
     /**

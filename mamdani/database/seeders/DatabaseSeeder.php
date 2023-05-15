@@ -6,6 +6,7 @@ use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Database\Seeders\PernyataanSeeder;
+use Database\Seeders\JurusanSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -22,6 +23,7 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call(PernyataanSeeder::class);
+        $this->call(JurusanSeeder::class);
         
         User::create([
             'name' => 'Lisa Efrianti',

@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\TesMinat;
-use App\Http\Requests\StoreTesMinatRequest;
-use App\Http\Requests\UpdateTesMinatRequest;
 
 class TesMinatController extends Controller
 {
@@ -13,7 +11,10 @@ class TesMinatController extends Controller
      */
     public function index()
     {
-        //
+        return view('dashboard.tesminat.index',[
+            'title' => 'Hasil Tes Minat',
+            'minat' => TesMinat::all()
+        ]);
     }
 
     /**

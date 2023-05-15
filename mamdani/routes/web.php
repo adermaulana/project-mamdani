@@ -2,7 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RaporController;
+use App\Http\Controllers\JurusanController;
+use App\Http\Controllers\PesertaController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\TesMinatController;
 use App\Http\Controllers\PernyataanController;
 
 /*
@@ -38,4 +42,16 @@ Route::get('/register', [RegisterController::class,'index'])->middleware('guest'
 Route::post('/register', [RegisterController::class,'store']);
 
 //Pernyataan
-Route::resource('/dashboard/instrumen',PernyataanController::class)->middleware('auth');;
+Route::resource('/dashboard/instrumen',PernyataanController::class)->middleware('auth');
+
+//Jurusan
+Route::resource('/dashboard/jurusan',JurusanController::class)->middleware('auth');
+
+//Peserta
+Route::resource('/dashboard/peserta',PesertaController::class)->middleware('auth');
+
+//TesMinat
+Route::resource('/dashboard/minat',TesMinatController::class)->middleware('auth');
+
+//NilaiRapor
+Route::resource('/dashboard/rapor',RaporController::class)->middleware('auth');
